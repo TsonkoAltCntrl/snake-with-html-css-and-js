@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="food.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     height="100px"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="2.9462782"
+     inkscape:cx="5.6002858"
+     inkscape:cy="32.583481"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-midpoints="true"
+     inkscape:object-paths="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824" />
+    <sodipodi:guide
+       position="13.229166,21.166667"
+       orientation="0.17679612,0.9842475"
+       id="guide1121" />
+    <sodipodi:guide
+       position="13.229166,21.166667"
+       orientation="0.98424749,-0.17679615"
+       id="guide1268"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="16.220873,20.62928"
+       orientation="0.52808833,-0.84918945"
+       id="guide1457" />
+    <sodipodi:guide
+       position="16.220873,20.62928"
+       orientation="-0.84918946,-0.5280883"
+       id="guide1488"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,0,255)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1992"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0.67104487,0,1 @ F,0,0,1,0,0.61248425,0,1 @ F,0,0,1,0,0.8636756,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2483"
+       style="opacity:1;vector-effect:none;fill:#000000;stroke-width:0.999999px;fill-opacity:1"
+       d="M 52.212891 7.3515625 A 2.1202019 2.1202019 0 0 0 51.849609 7.3886719 A 2.1202019 2.1202019 0 0 0 50.160156 9.09375 L 49.087891 15.064453 A 35.000002 35.000002 0 0 0 15 50 A 35.000002 35.000002 0 0 0 50 85 A 35.000002 35.000002 0 0 0 85 50 C 85 47.238575 82.761425 45 80 45 C 77.238575 45 75 47.238575 75 50 A 24.999999 24.999999 0 0 1 50 75 A 24.999999 24.999999 0 0 1 25 50 A 24.999999 24.999999 0 0 1 47.259766 25.238281 L 46.078125 31.822266 A 2.1202019 2.1202019 0 0 0 49.289062 34 L 62.427734 25.828125 A 2.1202019 2.1202019 0 0 0 63.107422 22.90625 L 54.050781 8.3476562 A 2.1202019 2.1202019 0 0 0 52.212891 7.3515625 z "
+       transform="scale(0.26458333)" />
+  </g>
+</svg>

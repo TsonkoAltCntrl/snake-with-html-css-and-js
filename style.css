@@ -1,0 +1,346 @@
+/* raiz */
+
+:root {
+    --size: 90vmin;
+    --col-snake: #f05555;
+    --col-shadow: #ff88aa;
+    --col-part: #703010;
+    --col-eye-l: #010033;
+    --col-eye-r: #010033;
+    font: 16px;
+}
+
+/* color: rgb(1, 77, 33); */
+
+/* elementos */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+button {
+    transition: all 500ms;
+    outline: none;
+}
+button:hover {
+    filter: brightness(125%);
+}
+
+/* ids */
+
+#game {
+    margin: calc((100vh - var(--size)) / 2) auto;
+    width: var(--size);
+    height: var(--size);
+    background-color: rgb(40, 65, 47);
+    font-family: 'Teko', sans-serif;
+    overflow: hidden;
+    text-align: center;
+    user-select: none;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#play {
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    z-index: 60;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* clases */
+
+.game__h2 {
+    /* fuentes y texto */
+    color: rgb(97, 145, 9);
+    font-size: 6rem;
+    font-weight: 400;
+    /* maquetación */
+    height: 8rem;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    z-index: 20;
+    animation: snake 1s infinite;
+    top: 8%;
+    /* fondo y sombra */
+    box-shadow: 0 0 0 .3rem rgb(1, 92, 31);
+    background:
+        radial-gradient(circle at -2%, #071 37%, #480 37%, #480 47%, transparent 47%),
+        radial-gradient(circle at 48% 0%, green 37%, #480 37%, #480 47%, transparent 47%),
+        radial-gradient(circle at 48% 100%, green 37%, #480 37%, #480 47%, #071 47%);
+    background-size: 2rem 2rem;
+}
+.game__h2-span {
+    text-shadow: .2rem .2rem rgb(1, 104, 1);
+    animation: dance 2s infinite;
+}
+.snake {
+    width: 5%;
+    height: 5%;
+    background-color: var(--col-snake);
+    box-shadow: 0 0 .3rem var(--col-shadow);
+    position: absolute;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    top: -10%;
+    left: -10%;
+    transition: filter 500ms;
+}
+.snake-body {
+    width: 3.5%;
+    height: 3.5%;
+}
+.snake-body::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: var(--col-part);
+    left: 0;
+    top: -45%;
+}
+.snake-inter-left {
+    border-bottom-left-radius: 100%;
+}
+.snake-inter-right {
+    border-bottom-right-radius: 100%;
+}
+.snake-head {
+    border-radius: 20%;
+    border-top-left-radius: 50% 75%;
+    border-top-right-radius: 50% 75%;
+    top: 52.5%;
+    left: 52.5%;
+    z-index: 1;
+}
+.snake-end {
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+}
+.snake-head::after, .snake-head::before {
+    content: "";
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    background-color: var(--col-eye-l);
+    top: 35%;
+    left: 20%;
+    right: unset;
+    transform-origin: center;
+}
+.snake-head::before {
+    left: unset;
+    right: 20%;
+    background-color: var(--col-eye-r);
+}
+.food {
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    background:
+        url(/svg/food-v2.svg),
+        #eaea7a;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(.8) rotate(0deg);
+    box-shadow: 0 0 1rem #fdfd2f;
+    animation: food-grow 3s alternate infinite;
+    color: white;
+}
+.game__h3 {
+    position: relative;
+    font-size: 2rem;
+    color: rgb(46, 139, 51);
+    margin: 0;
+    top: 12%;
+}
+.screen {
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    /* background-color: rgb(24, 29, 24); */
+    background:
+        linear-gradient(#385 0%, transparent 5%, transparent 95%, #385 100%),
+        linear-gradient(90deg, #385 0%, transparent 5%, transparent 95%, #385 100%),
+        #142;
+    background-size: 5% 5%;
+    filter: opacity(0%) brightness(100%);
+    transition: 1s;
+}
+.screen-dif {
+    top: 0;
+    filter: opacity(100%) brightness(100%);
+    animation: bright 1s;
+}
+.moveScreen {
+    top: 0;
+    filter: opacity(100%) brightness(100%);
+}
+.top {    transform: translate(-50%, -50%) rotate(0);       }
+.right {  transform: translate(-50%, -50%) rotate(.25turn); }
+.bottom { transform: translate(-50%, -50%) rotate(.5turn);  }
+.left {   transform: translate(-50%, -50%) rotate(.75turn); }
+.score {
+    position: relative;
+    font-size: 4rem;
+    color: rgb(191, 255, 131);
+    text-shadow: 0 0 .2rem chartreuse;
+    z-index: 60;
+    transition: 1s;
+    top: 10%;
+}
+.score-dif {
+    animation: score-ani .5s;
+}
+.score__move {
+    top: -30%;
+    font-size: 2em;
+}
+.speed {
+    position: absolute;
+    font-size: 2rem;
+    padding: 0 8px;
+    color: rgb(71, 24, 24);
+    text-shadow: 0 0 .4rem rgb(214, 139, 88);
+    transition: 1s;
+    top: 0;
+    left: 0;
+    animation: speed-ani 1s;
+    z-index: 20;
+}
+.play-center {
+    width: 9rem;
+    height: 9rem;
+    background:
+        url(/svg/play.svg),
+        rgb(7, 128, 68);
+    background-size: 90%;
+    background-position: center;
+    top: 12%;
+    box-shadow: 0 2vmin rgb(1, 104, 47);
+}
+.play-center:active {
+    margin: 2vmin 0 0 0;
+    box-shadow: 0 0 rgb(1, 104, 82);
+}
+.play-top-right {
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    box-shadow: 0 0 1vmin rgb(1, 104, 47);
+}
+.play-stop {
+    background:
+        url(/svg/stop.svg),
+        rgb(7, 128, 68);
+    background-size: 80%;
+    background-position: center;
+}
+.play-play {
+    background:
+        url(/svg/play.svg),
+        rgb(7, 128, 68);
+    background-size: 90%;
+    background-position: center;
+}
+.play-retry {
+    background:
+        url(/svg/retry.svg),
+        rgb(7, 128, 68);
+    background-position: center;
+}
+button:active {
+    margin: 1vmin 0 0 0;
+}
+/* animaciones */
+
+@keyframes snake {
+    0% {
+        background-position: 0%;
+    }
+    25% {
+        background-position: -8rem;
+    }
+    100% {
+        background-position: -8rem;
+    }
+}
+@keyframes dance {
+    0% {
+        font-size: 6rem;
+        width: 1ch;
+        text-shadow: .2rem .2rem rgb(1, 104, 1);
+    }
+    45% {
+        font-size: 8rem;
+        width: 1.5ch;
+        text-shadow: 0 .5rem 1rem rgb(0, 77, 0);
+    }
+    55% {
+        font-size: 8rem;
+        width: 1.5ch;
+        text-shadow: 0 .5rem 1rem rgb(0, 77, 0);
+    }
+    100% {
+        font-size: 6rem;
+        width: 1ch;
+        text-shadow: .2rem .2rem rgb(1, 104, 1);
+    }
+}
+@keyframes food-grow {
+    0% {
+        transform: translate(-50%, -50%) scale(.8)  rotate(0deg);
+        box-shadow: 0 0 1rem #fdfd2f;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1)  rotate(180deg);
+        box-shadow: 0 0 1.5rem .5rem var(--col-pri);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(.8)  rotate(270deg);
+        box-shadow: 0 0 1rem #fdfd2f;
+    }
+}
+@keyframes bright {
+    0% { filter: opacity(100%) brightness(100%); }
+    20% { filter: opacity(100%) brightness(300%); }
+    40% { filter: opacity(100%) brightness(100%); }
+}
+@keyframes score-ani {
+    0% {
+        color: rgb(191, 255, 131);
+        text-shadow: 0 0 .2rem chartreuse;
+        transform: rotate(0deg);
+    }
+    25% {
+        color: green;
+        text-shadow:
+            0 0 0 black,
+            1rem 0 black,
+            -1rem 0 black;
+        transform: rotate(360deg);
+    }
+}
+@keyframes speed-ani {
+    0% { left: -200%; }
+    100% { left: 0; }
+}
+@media screen and (max-height: 1100px), (max-width: 1100px) { html { font-size: 30px; } }
+@media screen and (max-height: 1000px), (max-width: 1000px) { html { font-size: 28px; } }
+@media screen and (max-height: 900px), (max-width: 900px) { html { font-size: 24px; } }
+@media screen and (max-height: 800px), (max-width: 800px) { html { font-size: 20px; } }
+@media screen and (max-height: 700px), (max-width: 700px) { html { font-size: 18px; } }
+@media screen and (max-height: 600px), (max-width: 600px) { html { font-size: 90%; } }
+@media screen and (max-height: 500px), (max-width: 500px) { html { font-size: 70%; } }
+@media screen and (max-height: 400px), (max-width: 400px) { html { font-size: 9px; } }
+@media screen and (max-height: 300px), (max-width: 300px) { html { font-size: 7px; } }

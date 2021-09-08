@@ -1,0 +1,64 @@
+.game__h2 {
+    color: rgb(97, 145, 9);
+    font-size: 6rem;
+    height: 8rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 0 .7rem rgb(1, 92, 31);
+    background:
+        radial-gradient(circle at -2% 25%, rgb(7, 116, 7) 15%, #480 15%, #480 23%, transparent 23%),
+        radial-gradient(circle at -2% 75%, rgb(11, 128, 11) 15%, #480 15%, #480 23%, transparent 23%),
+        radial-gradient(circle at 22% 100%, rgb(4, 148, 4) 15%, #480 15%, #480 23%, transparent 23%),
+        radial-gradient(circle at 22% 50%, rgb(53, 131, 33) 21%, #480 21%, #480 32%, transparent 32%),
+        radial-gradient(circle at 22% 0%, rgb(4, 148, 4) 15%, #480 15%, #480 23%, transparent 23%),
+        radial-gradient(circle at 47% 25%, rgb(32, 121, 32) 21%, #480 21%, #480 32%, transparent 32%),
+        radial-gradient(circle at 47% 75%, rgb(0, 128, 49) 21%, #480 21%, #480 32%, transparent 32%),
+        radial-gradient(circle at 72% 100%, rgb(36, 133, 36) 15%, #480 15%, #480 23%, transparent 23%),
+        radial-gradient(circle at 72% 50%, green 21%, #480 21%, #480 32%, transparent 32%),
+        radial-gradient(circle at 72% 0%, rgb(36, 133, 36) 15%, #480 15%, #480 23%, transparent 23%),
+        radial-gradient(circle at 100% 25%, rgb(7, 116, 7) 15%, green 15%)
+        ;
+    background-size: 4rem 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    animation: snake 1s infinite;
+}
+.game__h2 > span {
+    text-shadow: .2rem .2rem rgb(1, 104, 1);
+    animation: dance 2s infinite;
+}
+/* @keyframes snake {
+    0% {
+        background-position: 0%;
+    }
+    25% {
+        background-position: -8rem;
+    }
+    100% {
+        background-position: -8rem;
+    }
+} */
+@keyframes dance {
+    0% {
+        font-size: 6rem;
+        width: 1ch;
+        text-shadow: .2rem .2rem rgb(1, 104, 1);
+    }
+    45% {
+        font-size: 8rem;
+        width: 1.5ch;
+        text-shadow: 0 .5rem .5rem rgb(1, 104, 1);
+    }
+    55% {
+        font-size: 8rem;
+        width: 1.5ch;
+        text-shadow: 0 .5rem .5rem rgb(1, 104, 1);
+    }
+    100% {
+        font-size: 6rem;
+        width: 1ch;
+        text-shadow: .2rem .2rem rgb(1, 104, 1);
+    }
+}

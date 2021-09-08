@@ -1,0 +1,25 @@
+if(count > 0) {
+    count--;
+}else {
+    count = 4;
+    root.style.setProperty('--col-pri', colorsSpecial[0]);
+    root.style.setProperty('--col-sec', colorsSpecial[1]);
+    root.style.setProperty('--col-ter', colorsSpecial[2]);
+    if(movTime > 260) {
+        movTime -= 80;
+    }else if(movTime > 140) {
+        movTime -= 60;
+    }else if(movTime > 60) {
+        movTime -= 40;
+    }
+}
+if(count === 4){
+    root.style.setProperty('--col-pri', colorsInitial[0]);
+    root.style.setProperty('--col-sec', colorsInitial[1]);
+    root.style.setProperty('--col-ter', colorsInitial[2]);
+    screen.classList.replace('moveScreen','screen-dif');
+    score.classList.add('score-dif');
+} else if(count === 3) {
+    screen.classList.replace('screen-dif','moveScreen');
+    score.classList.remove('score-dif');
+}
