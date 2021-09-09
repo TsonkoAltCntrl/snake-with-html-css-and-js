@@ -7,8 +7,12 @@ const food = document.createElement('span');
 const score = document.querySelector('.score');
 const root = document.querySelector(':root');
 const speed = document.createElement('span');
-//declaraciones
 
+//audio
+const music = new Audio('./audio/snake-song.wav');
+music.loop = true;
+
+//declaraciones
 const iniPosSnake = ['top', 52.5, 52.5];
 const changeAnimation = 220;
 const quitAnimation = 140;
@@ -256,6 +260,7 @@ function beginning() {
     initial();
     basic();
     timer();
+    music.play();
 }
 function retry() {
     for(let i = 0; i < snake.length; i++) {
