@@ -146,7 +146,7 @@ button:hover {
     width: 5%;
     height: 5%;
     background:
-        url(/svg/food-v2.svg),
+        url(./svg/food-v2.svg),
         #eaea7a;
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(.8) rotate(0deg);
@@ -222,7 +222,7 @@ button:hover {
     width: 9rem;
     height: 9rem;
     background:
-        url(/svg/play.svg),
+        url('./svg/play.svg'),
         rgb(7, 128, 68);
     background-size: 90%;
     background-position: center;
@@ -233,7 +233,7 @@ button:hover {
     margin: 2vmin 0 0 0;
     box-shadow: 0 0 rgb(1, 104, 82);
 }
-.play-top-right {
+.play-bottom {
     width: 2rem;
     height: 2rem;
     top: 50%;
@@ -241,21 +241,21 @@ button:hover {
 }
 .play-stop {
     background:
-        url(/svg/stop.svg),
+        url('./svg/stop.svg'),
         rgb(7, 128, 68);
     background-size: 80%;
     background-position: center;
 }
 .play-play {
     background:
-        url(/svg/play.svg),
+        url('./svg/play.svg'),
         rgb(7, 128, 68);
     background-size: 90%;
     background-position: center;
 }
 .play-retry {
     background:
-        url(/svg/retry.svg),
+        url('./svg/retry.svg'),
         rgb(7, 128, 68);
     background-position: center;
 }

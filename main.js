@@ -8,10 +8,6 @@ const score = document.querySelector('.score');
 const root = document.querySelector(':root');
 const speed = document.createElement('span');
 
-//audio
-const music = new Audio('./audio/snake-song.wav');
-music.loop = true;
-
 //declaraciones
 const iniPosSnake = ['top', 52.5, 52.5];
 const changeAnimation = 220;
@@ -49,7 +45,7 @@ function initial() {
     screen.classList.add('moveScreen');
     screen.appendChild(food);
     screen.appendChild(snake[0]);
-    play.classList.replace('play-center','play-top-right');
+    play.classList.replace('play-center','play-bottom');
     screen.appendChild(speed);
     score.classList.add('score__move');
     play.classList.add('play-stop');
